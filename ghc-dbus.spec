@@ -3,8 +3,8 @@
 %global pkg_name dbus
 
 Name:           ghc-%{pkg_name}
-Version:        0.10.4
-Release:        2%{?dist}
+Version:        0.10.5
+Release:        1%{?dist}
 Summary:        Haskell client library for the D-Bus IPC system
 
 License:        GPLv3+
@@ -78,6 +78,10 @@ This package provides the development files for the Haskell %{pkg_name} library.
 
 
 %changelog
+* Mon Feb 03 2014 Dan Callaghan <dcallagh@redhat.com> - 0.10.5-1
+- upstream release 0.10.5 (no effective changes, upstream just relaxed the 
+  version requirement for cereal)
+
 * Wed Jul 17 2013 Dan Callaghan <dcallagh@redhat.com> - 0.10.4-2
 - update for new guidelines (cabal-rpm 0.8.2)
 
