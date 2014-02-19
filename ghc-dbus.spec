@@ -4,7 +4,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        0.10.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Haskell client library for the D-Bus IPC system
 
 License:        GPLv3+
@@ -78,6 +78,9 @@ This package provides the development files for the Haskell %{pkg_name} library.
 
 
 %changelog
+* Thu Feb 20 2014 Dan Callaghan <dcallagh@redhat.com> - 0.10.6-2
+- rebuilt for updated ghc-libxml-sax
+
 * Wed Feb 19 2014 Dan Callaghan <dcallagh@redhat.com> - 0.10.6-1
 - upstream release 0.10.6 (again no effective changes, just more relaxing of 
   version requirements)
