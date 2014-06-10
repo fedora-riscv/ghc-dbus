@@ -2,14 +2,19 @@
 
 %global pkg_name dbus
 
+%bcond_with tests
+
+# no useful debuginfo for Haskell packages without C sources
+%global debug_package %{nil}
+
 Name:           ghc-%{pkg_name}
 Version:        0.10.7
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Haskell client library for the D-Bus IPC system
 
 License:        GPLv3+
 URL:            http://hackage.haskell.org/package/%{pkg_name}
-Source0:        http://hackage.haskell.org/packages/archive/%{pkg_name}/%{version}/%{pkg_name}-%{version}.tar.gz
+Source0:        http://hackage.haskell.org/package/%{pkg_name}-%{version}/%{pkg_name}-%{version}.tar.gz
 
 BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros
@@ -26,6 +31,14 @@ BuildRequires:  ghc-transformers-devel
 BuildRequires:  ghc-unix-devel
 BuildRequires:  ghc-vector-devel
 BuildRequires:  ghc-xml-types-devel
+%if %{with tests}
+BuildRequires:  ghc-QuickCheck-devel
+BuildRequires:  ghc-chell-devel
+BuildRequires:  ghc-chell-quickcheck-devel
+BuildRequires:  ghc-directory-devel
+BuildRequires:  ghc-filepath-devel
+BuildRequires:  ghc-process-devel
+%endif
 # End cabal-rpm deps
 
 %description
@@ -40,13 +53,14 @@ interfaces common to foreign bindings.
 
 %package devel
 Summary:        Haskell %{pkg_name} library development files
+Provides:       %{name}-static = %{version}-%{release}
 Requires:       ghc-compiler = %{ghc_version}
 Requires(post): ghc-compiler = %{ghc_version}
 Requires(postun): ghc-compiler = %{ghc_version}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
-This package provides the development files for the Haskell %{pkg_name} library.
+This package provides the Haskell %{pkg_name} library development files.
 
 
 %prep
@@ -59,6 +73,12 @@ This package provides the development files for the Haskell %{pkg_name} library.
 
 %install
 %ghc_lib_install
+
+
+%check
+%if %{with tests}
+%cabal test
+%endif
 
 
 %post devel
@@ -78,6 +98,9 @@ This package provides the development files for the Haskell %{pkg_name} library.
 
 
 %changelog
+* Tue Jun 10 2014 Jens Petersen <petersen@redhat.com> - 0.10.7-3
+- update to cblrpm-0.8.11
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.10.7-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
