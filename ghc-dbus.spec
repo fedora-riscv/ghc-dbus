@@ -8,8 +8,8 @@
 %global debug_package %{nil}
 
 Name:           ghc-%{pkg_name}
-Version:        0.10.7
-Release:        4%{?dist}
+Version:        0.10.8
+Release:        1%{?dist}
 Summary:        Haskell client library for the D-Bus IPC system
 
 License:        GPLv3+
@@ -98,6 +98,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Fri Aug 22 2014 Dan Callaghan <dcallagh@redhat.com> - 0.10.8-1
+- upstream release 0.10.8 (just test fixes and dependency relaxations)
+
 * Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.10.7-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
