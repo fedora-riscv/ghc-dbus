@@ -4,17 +4,14 @@
 
 %bcond_with tests
 
-# no useful debuginfo for Haskell packages without C sources
-%global debug_package %{nil}
-
 Name:           ghc-%{pkg_name}
 Version:        0.10.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Haskell client library for the D-Bus IPC system
 
 License:        GPLv3+
-URL:            http://hackage.haskell.org/package/%{pkg_name}
-Source0:        http://hackage.haskell.org/package/%{pkg_name}-%{version}/%{pkg_name}-%{version}.tar.gz
+Url:            https://hackage.haskell.org/package/%{pkg_name}
+Source0:        https://hackage.haskell.org/package/%{pkg_name}-%{version}/%{pkg_name}-%{version}.tar.gz
 
 BuildRequires:  ghc-Cabal-devel
 BuildRequires:  ghc-rpm-macros
@@ -98,6 +95,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Tue Jan 27 2015 Jens Petersen <petersen@fedoraproject.org> - 0.10.8-2
+- cblrpm refresh
+
 * Fri Aug 22 2014 Dan Callaghan <dcallagh@redhat.com> - 0.10.8-1
 - upstream release 0.10.8 (just test fixes and dependency relaxations)
 
