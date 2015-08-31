@@ -6,7 +6,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        0.10.10
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Haskell client library for the D-Bus IPC system
 
 License:        GPLv3+
@@ -95,6 +95,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Mon Aug 31 2015 Peter Robinson <pbrobinson@fedoraproject.org> 0.10.10-3
+- Rebuild (aarch64 vector hashes)
+
 * Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.10.10-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
