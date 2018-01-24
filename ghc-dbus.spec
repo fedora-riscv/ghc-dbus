@@ -4,11 +4,11 @@
 %global pkg_name dbus
 %global pkgver %{pkg_name}-%{version}
 
-%bcond_with tests
+%bcond_without tests
 
 Name:           ghc-%{pkg_name}
-Version:        0.10.12
-Release:        5%{?dist}
+Version:        0.10.14
+Release:        1%{?dist}
 Summary:        Haskell client library for the D-Bus IPC system
 
 License:        GPLv3+
@@ -21,6 +21,7 @@ BuildRequires:  ghc-rpm-macros
 BuildRequires:  ghc-bytestring-devel
 BuildRequires:  ghc-cereal-devel
 BuildRequires:  ghc-containers-devel
+BuildRequires:  ghc-deepseq-devel
 BuildRequires:  ghc-libxml-sax-devel
 BuildRequires:  ghc-network-devel
 BuildRequires:  ghc-parsec-devel
@@ -32,11 +33,14 @@ BuildRequires:  ghc-vector-devel
 BuildRequires:  ghc-xml-types-devel
 %if %{with tests}
 BuildRequires:  ghc-QuickCheck-devel
-BuildRequires:  ghc-chell-devel
-BuildRequires:  ghc-chell-quickcheck-devel
 BuildRequires:  ghc-directory-devel
+BuildRequires:  ghc-extra-devel
 BuildRequires:  ghc-filepath-devel
 BuildRequires:  ghc-process-devel
+BuildRequires:  ghc-resourcet-devel
+BuildRequires:  ghc-tasty-devel
+BuildRequires:  ghc-tasty-hunit-devel
+BuildRequires:  ghc-tasty-quickcheck-devel
 %endif
 # End cabal-rpm deps
 
@@ -104,6 +108,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Wed Jan 24 2018 Jens Petersen <petersen@redhat.com> - 0.10.14-1
+- update to 0.10.14
+
 * Wed Aug 02 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.10.12-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
