@@ -4,7 +4,7 @@
 %global pkg_name dbus
 %global pkgver %{pkg_name}-%{version}
 
-%bcond_without tests
+%bcond_with tests
 
 Name:           ghc-%{pkg_name}
 Version:        0.10.14
