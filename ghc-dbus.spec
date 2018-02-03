@@ -85,12 +85,6 @@ This package provides the Haskell %{pkg_name} library development files.
 %cabal_test
 
 
-%post -p /sbin/ldconfig
-
-
-%postun -p /sbin/ldconfig
-
-
 %post devel
 %ghc_pkg_recache
 
