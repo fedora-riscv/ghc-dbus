@@ -7,14 +7,15 @@
 %bcond_with tests
 
 Name:           ghc-%{pkg_name}
-Version:        0.10.15
-Release:        3%{?dist}
-Summary:        Haskell client library for the D-Bus IPC system
+Version:        1.0.1
+Release:        1%{?dist}
+Summary:        A client library for the D-Bus IPC system
 
-License:        GPLv3+
+License:        ASL 2.0
 Url:            https://hackage.haskell.org/package/%{pkg_name}
 # Begin cabal-rpm sources:
 Source0:        https://hackage.haskell.org/package/%{pkgver}/%{pkgver}.tar.gz
+Source1:        https://hackage.haskell.org/package/%{pkgver}/%{pkg_name}.cabal#/%{pkgver}.cabal
 # End cabal-rpm sources
 
 # Begin cabal-rpm deps:
@@ -24,11 +25,16 @@ BuildRequires:  ghc-bytestring-devel
 BuildRequires:  ghc-cereal-devel
 BuildRequires:  ghc-containers-devel
 BuildRequires:  ghc-deepseq-devel
+BuildRequires:  ghc-filepath-devel
+BuildRequires:  ghc-lens-devel
 BuildRequires:  ghc-libxml-sax-devel
 BuildRequires:  ghc-network-devel
 BuildRequires:  ghc-parsec-devel
 BuildRequires:  ghc-random-devel
+BuildRequires:  ghc-split-devel
+BuildRequires:  ghc-template-haskell-devel
 BuildRequires:  ghc-text-devel
+BuildRequires:  ghc-th-lift-devel
 BuildRequires:  ghc-transformers-devel
 BuildRequires:  ghc-unix-devel
 BuildRequires:  ghc-vector-devel
@@ -37,7 +43,6 @@ BuildRequires:  ghc-xml-types-devel
 BuildRequires:  ghc-QuickCheck-devel
 BuildRequires:  ghc-directory-devel
 BuildRequires:  ghc-extra-devel
-BuildRequires:  ghc-filepath-devel
 BuildRequires:  ghc-process-devel
 BuildRequires:  ghc-resourcet-devel
 BuildRequires:  ghc-tasty-devel
@@ -74,6 +79,7 @@ This package provides the Haskell %{pkg_name} library development files.
 %prep
 # Begin cabal-rpm setup:
 %setup -q -n %{pkgver}
+cp -bp %{SOURCE1} %{pkg_name}.cabal
 # End cabal-rpm setup
 
 
@@ -112,6 +118,9 @@ This package provides the Haskell %{pkg_name} library development files.
 
 
 %changelog
+* Thu Feb 21 2019 Jens Petersen <petersen@redhat.com> - 1.0.1-1
+- update to 1.0.1
+
 * Sun Feb 17 2019 Jens Petersen <petersen@redhat.com> - 0.10.15-3
 - refresh to cabal-rpm-0.13
 
