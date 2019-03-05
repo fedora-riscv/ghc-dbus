@@ -52,6 +52,9 @@ BuildRequires:  ghc-tasty-hunit-devel
 BuildRequires:  ghc-tasty-quickcheck-devel
 %endif
 # End cabal-rpm deps
+%if %{with tests}
+BuildRequires:  dbus-daemon
+%endif
 
 %description
 D-Bus is a simple, message-based protocol for inter-process communication,
