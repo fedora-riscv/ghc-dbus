@@ -8,7 +8,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        1.1.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A client library for the D-Bus IPC system
 
 License:        ASL 2.0
@@ -123,6 +123,9 @@ cp -bp %{SOURCE1} %{pkg_name}.cabal
 
 
 %changelog
+* Thu Jul 25 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.1.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
 * Tue Mar  5 2019 Jens Petersen <petersen@redhat.com> - 1.1.1-1
 - update to 1.0.1
 
