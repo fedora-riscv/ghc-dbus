@@ -7,8 +7,8 @@
 %bcond_without tests
 
 Name:           ghc-%{pkg_name}
-Version:        1.2.7
-Release:        3%{?dist}
+Version:        1.2.15.1
+Release:        1%{?dist}
 Summary:        A client library for the D-Bus IPC system
 
 License:        ASL 2.0
@@ -154,6 +154,9 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
+* Sun Jun 07 2020 Jens Petersen <petersen@redhat.com> - 1.2.15.1-1
+- update to 1.2.15.1
+
 * Thu Feb 20 2020 Jens Petersen <petersen@redhat.com> - 1.2.7-3
 - refresh to cabal-rpm-2.0.2
 
