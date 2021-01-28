@@ -7,8 +7,8 @@
 %bcond_without tests
 
 Name:           ghc-%{pkg_name}
-Version:        1.2.16
-Release:        4%{?dist}
+Version:        1.2.17
+Release:        1%{?dist}
 Summary:        A client library for the D-Bus IPC system
 
 License:        ASL 2.0
@@ -144,6 +144,9 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
+* Thu Aug  5 2021 Jens Petersen <petersen@redhat.com> - 1.2.17-1
+- update to 1.2.17
+
 * Thu Jul 22 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.2.16-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
@@ -241,11 +244,11 @@ This package provides the Haskell %{pkg_name} profiling library.
 - rebuilt for updated ghc-libxml-sax
 
 * Wed Feb 19 2014 Dan Callaghan <dcallagh@redhat.com> - 0.10.6-1
-- upstream release 0.10.6 (again no effective changes, just more relaxing of 
+- upstream release 0.10.6 (again no effective changes, just more relaxing of
   version requirements)
 
 * Mon Feb 03 2014 Dan Callaghan <dcallagh@redhat.com> - 0.10.5-1
-- upstream release 0.10.5 (no effective changes, upstream just relaxed the 
+- upstream release 0.10.5 (no effective changes, upstream just relaxed the
   version requirement for cereal)
 
 * Wed Jul 17 2013 Dan Callaghan <dcallagh@redhat.com> - 0.10.4-2
