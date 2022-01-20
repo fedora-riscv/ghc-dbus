@@ -8,7 +8,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        1.2.17
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A client library for the D-Bus IPC system
 
 License:        ASL 2.0
@@ -147,6 +147,9 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
+* Thu Jan 20 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.2.17-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
 * Thu Aug  5 2021 Jens Petersen <petersen@redhat.com> - 1.2.17-1
 - update to 1.2.17
 
