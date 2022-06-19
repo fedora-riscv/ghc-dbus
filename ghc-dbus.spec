@@ -16,6 +16,7 @@ Url:            https://hackage.haskell.org/package/%{pkg_name}
 # Begin cabal-rpm sources:
 Source0:        https://hackage.haskell.org/package/%{pkgver}/%{pkgver}.tar.gz
 # End cabal-rpm sources
+Patch0:         dbus-disable-test_ListenUnix_InvalidBind.patch
 
 # Begin cabal-rpm deps:
 BuildRequires:  ghc-Cabal-devel
@@ -105,6 +106,7 @@ This package provides the Haskell %{pkg_name} profiling library.
 # Begin cabal-rpm setup:
 %setup -q -n %{pkgver}
 # End cabal-rpm setup
+%patch0 -p1 -b .orig
 
 
 %build
@@ -147,8 +149,8 @@ This package provides the Haskell %{pkg_name} profiling library.
 
 
 %changelog
-* Fri Jun 17 2022 Jens Petersen <petersen@redhat.com> - 1.2.17-3
-- rebuild
+* Sun Jun 19 2022 Jens Petersen <petersen@redhat.com> - 1.2.17-3
+- disable test_ListenUnix_InvalidBind (failing with ghc-8.10.7 in mock)
 
 * Thu Jan 20 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.2.17-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
