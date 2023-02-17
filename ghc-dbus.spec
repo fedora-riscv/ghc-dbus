@@ -4,7 +4,8 @@
 %global pkg_name dbus
 %global pkgver %{pkg_name}-%{version}
 
-%bcond_without tests
+# requires network
+%bcond_with tests
 
 Name:           ghc-%{pkg_name}
 Version:        1.2.27
