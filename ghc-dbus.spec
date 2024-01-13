@@ -5,7 +5,9 @@
 %global pkgver %{pkg_name}-%{version}
 
 # requires network
+%ifnarch riscv64
 %bcond_with tests
+%endif
 
 Name:           ghc-%{pkg_name}
 Version:        1.2.29
