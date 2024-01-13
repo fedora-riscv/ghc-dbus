@@ -11,7 +11,7 @@
 
 Name:           ghc-%{pkg_name}
 Version:        1.2.29
-Release:        %autorelease
+Release:        %autorelease -e 0.rv64
 Summary:        A client library for the D-Bus IPC system
 
 License:        Apache-2.0
